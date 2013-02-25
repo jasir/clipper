@@ -1,0 +1,21 @@
+{
+	"name": "jasir/clipper",
+	"description": "Clips out marked parts from textfile",
+	"require-dev": {
+		"phpunit/phpunit": "3.7.9",
+		"jasir/testbase": "dev-master",
+        "nette/nette": "dev-master"
+	},
+	"authors": [
+		{
+			"name": "jasir",
+			"email": "sirjarda2@gmail.com"
+		}
+	],
+	"require": {
+
+	},
+	"autoload": {
+		"psr-0": {"jasir\\Clipper": "src/"}
+	}
+}

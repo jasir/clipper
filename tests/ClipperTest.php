@@ -17,7 +17,7 @@ class ClipperTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException jasir\Clipper\ClipperLogicException
+	 * @expectedException jasir\Clipper\ClipperException
 	 */
 	public function test_start_mark_must_not_be_same_as_end_mark() {
 		$this->createClipper('<start>', '<start>');

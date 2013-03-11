@@ -8,7 +8,7 @@ class Clipper {
 	public function __construct($startMark, $endMark) {
 
 		if ($startMark === $endMark) {
-			throw new ClipperLogicException('Start mark and end mark must not be the same');
+			throw new ClipperException('Start mark and end mark must not be the same');
 		}
 
 		$this->startMark = $startMark;
@@ -120,8 +120,5 @@ class Clipper {
 }
 
 class ClipperException extends \RuntimeException {
-
-}
-class ClipperLogicException extends \LogicException {
 
 }

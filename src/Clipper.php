@@ -51,20 +51,18 @@ class Clipper {
 		$startMarks = $startMarks[0];
 		$endMarks = $endMarks[0];
 
-		if(count($startMarks) !== count($endMarks)) {
+		if (count($startMarks) !== count($endMarks)) {
 			throw new ClipperException('Count of start mark do not match counts of end marks.');
 		}
 
 		$marks = array();
 
-		$markLenght = strlen($this->startMark);
-		foreach($startMarks as $mark) {
-			$marks[$mark[1]] = array('t' => 's', 'start' => $mark[1], 'end' => $mark[1] + $markLenght);
+		foreach ($startMarks as $mark) {
+			$marks[$mark[1]] = array('t' => 's', 'start' => $mark[1], 'end' => $mark[1] + strlen($mark[0]));
 		}
 
-		$markLenght = strlen($this->endMark);
-		foreach($endMarks as $mark) {
-			$marks[$mark[1]] = array('t' => 'e', 'start' => $mark[1], 'end' => $mark[1] + $markLenght);
+		foreach( $endMarks as $mark) {
+			$marks[$mark[1]] = array('t' => 'e', 'start' => $mark[1], 'end' => $mark[1] + strlen($mark[0]));
 		}
 
 		ksort($marks);

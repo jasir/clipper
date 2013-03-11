@@ -3,7 +3,6 @@
 namespace jasir\Clipper;
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/Clipper.php';
 
 class ClipperTest extends \PHPUnit_Framework_TestCase {
 

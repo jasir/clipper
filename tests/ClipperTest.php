@@ -99,6 +99,12 @@ EOF;
 		$this->assertEquals('outsideoutsideoutside', $clipper->excludeClip($text));
 	}
 
+	function test_clip_marks_can_contain_slashes() {
+		$text = "<body>wow</body>";
+		$clipper = $this->createClipper('<body>', '</body>');
+		$this->assertEquals('wow', $clipper->clip($text));
+	}
+
 	private function createClipper($startMark, $endMark) {
 		return new Clipper($startMark, $endMark);
 	}

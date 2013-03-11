@@ -42,8 +42,8 @@ class Clipper {
 	/* --- internal implementation --- */
 
 	private function buildRegions($text) {
-		$s = preg_quote($this->startMark);
-		$e = preg_quote($this->endMark);
+		$s = preg_quote($this->startMark, '/');
+		$e = preg_quote($this->endMark, '/');
 
 		preg_match_all("/$s/", $text, $startMarks, PREG_OFFSET_CAPTURE);
 		preg_match_all("/$e/", $text, $endMarks, PREG_OFFSET_CAPTURE);

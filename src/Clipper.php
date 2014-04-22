@@ -5,10 +5,14 @@ class Clipper {
 
 	private $startMark, $endMark;
 
-	public function __construct($startMark, $endMark) {
+	public function __construct($startMark = '<!-- clip start-->', $endMark = '<!-- clip end-->') {
 
 		if ($startMark === $endMark) {
-			throw new ClipperException('Start mark and end mark must not be the same');
+			throw new ClipperException('Start and end mark must be different.');
+		}
+
+		if (empty($startMark) || empty($endMark)) {
+			throw new ClipperException('Start and end mark must not be empty');
 		}
 
 		$this->startMark = $startMark;

@@ -16,20 +16,18 @@ class Clipper {
 	}
 
 	/**
-	 * Find and return part of text between start and end mark. Start and end marks can
-	 * be nested
+	 * Clip and return part of text between marks. Marks can be nested.
 	 *
 	 * @param string $text
 	 * @return string
 	 * @throws ClipperException when bad structure
-	 *
 	 */
 	public function clip($text) {
 		return $this->clipRegions($text, $this->buildRegions($text));
 	}
 
 	/**
-	 * Clip text not clipped in your marks. Opposite to excludeClip()
+	 * Clip and return text outside clipping marks. Marks can be nested.
 	 *
 	 * @param string $text
 	 * @return string
@@ -39,7 +37,7 @@ class Clipper {
 		return $this->clipRegions($text, $this->invertRegions($text, $this->buildRegions($text)));
 	}
 
-	/* --- internal implementation --- */
+	/* --- internal --- */
 
 	private function buildRegions($text) {
 		$s = preg_quote($this->startMark, '/');

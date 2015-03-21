@@ -63,7 +63,7 @@ class Clipper {
 			$marks[$mark[1]] = array('t' => 's', 'start' => $mark[1], 'end' => $mark[1] + strlen($mark[0]));
 		}
 
-		foreach( $endMarks as $mark) {
+		foreach ($endMarks as $mark) {
 			$marks[$mark[1]] = array('t' => 'e', 'start' => $mark[1], 'end' => $mark[1] + strlen($mark[0]));
 		}
 

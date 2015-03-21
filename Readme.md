@@ -28,7 +28,7 @@ Clipper is a small utility to take a text and clip regions marked with your own 
     
     # $result contains <body><p>LoremIpsum</p>
     
-## Clipping text not between marks    
+## Clipping text **not between marks**
 
     $result = $clipper->clipExclued($text);
     
